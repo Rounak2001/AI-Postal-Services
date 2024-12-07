@@ -6,6 +6,9 @@ from .models import ScannedPost
 from .serializers import ScannedPostSerializer
 from .utils import normalize_address, extract_pincode, get_postal_data, validate_address_from_postal_api
 import re
+from rest_framework import viewsets
+from .serializers import ScannedPostSerializer
+from rest_framework.pagination import PageNumberPagination
 
 class PostScanView(APIView):
     parser_classes = (MultiPartParser, FormParser)
@@ -57,3 +60,15 @@ class PostScanView(APIView):
 
         serializer = ScannedPostSerializer(post)
         return Response(serializer.data, status=status.HTTP_201_CREATED)
+
+# Custom Pagination Class
+class ScannedPostPagination(PageNumberPagination):
+    page_size = 10  # Number of records per page
+    page_size_query_param = 'page_size'  # Allow clients to change the page size
+    max_page_size = 100  # Maximum number of records per page
+
+
+class PostDataViewSet(viewsets.ModelViewSet):
+    queryset = ScannedPost.objects.all()  # Retrieve all records
+    serializer_class = ScannedPostSerializer
+    pagination_class = ScannedPostPagination
