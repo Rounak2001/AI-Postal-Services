@@ -44,7 +44,7 @@ const CustomerHome = () => {
   });
 
   return (
-    <div className="flex flex-col items-center justify-center py-10">
+    <div  style={{ backgroundColor: '#F2E7AE'}}  className="flex flex-col items-center justify-center py-10">
       <h1 className="text-2xl font-bold mb-6">Post Office Search</h1>
       <form
         onSubmit={searchPostOffices}
@@ -63,7 +63,7 @@ const CustomerHome = () => {
             <option value="postoffice">Post Office Name</option>
           </select>
         </div>
-        <div className="mb-4">
+        <div    className="mb-4">
           <label className="block text-gray-700 text-sm font-bold mb-2">
             Enter {searchType === 'pincode' ? 'PIN Code' : 'Post Office Name'}
           </label>
@@ -76,15 +76,16 @@ const CustomerHome = () => {
           />
         </div>
         <button
-          type="submit"
-          className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-        >
-          Search
-        </button>
+  type="submit"
+  className="bg-[#391a06] text-[#F2E7AE] font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline hover:bg-red-800"
+>
+  Search
+</button>
+
       </form>
 
       {results.length > 0 && (
-        <div className="mt-6 w-full max-w-4xl">
+        <div  style={{ backgroundColor: '#F2E7AE'}} className="mt-6 w-full max-w-4xl">
           <h3 className="font-bold text-lg mb-4">
             Number of Post Office(s) Found: {filteredResults.length || 0}
           </h3>

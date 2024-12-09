@@ -3,18 +3,27 @@ import { Link } from 'react-router-dom';
 
 const Header = () => {
   return (
-    <header className=" fixed top-0 left-0 w-full  bg-blue-600 text-white py-4 px-6 shadow-md z-10 flex items-center">
+    <header  style={{ backgroundColor: '#591202' }} className=" fixed top-0 left-0 w-full  text-white py-4 px-6 shadow-md z-10 flex items-center">
           <Link to="/">
         <img
-          src="\Mindmail logo.jpg" // Path to your logo image
+          src="\MailMind.svg" // Path to your logo image
           alt="Logo"
-          className="h-10 w-10 mr-4" // Adjust height and width as needed
+          className="h-10 w-10 mr-4 rounded-xl" // Adjust height and width as needed
         />
       </Link>
-      <h1 className="text-2xl font-bold"> MailMind: The AI Postmaster</h1>
+      <h1
+  style={{
+    textShadow: '2px 2px 3px black', // Adjust values as needed
+  }}
+  className="text-2xl font-bold"
+>
+  MailMind: The AI Postmaster
+</h1>
     </header>
   );
 };
+
+
 
 export default Header;
 
