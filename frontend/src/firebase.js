@@ -4,7 +4,7 @@
 
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { getAuth, onAuthStateChanged } from 'firebase/auth';
+//import { getAuth, onAuthStateChanged } from 'firebase/auth';
 import { useState, useEffect } from 'react';
 
 
@@ -35,7 +35,7 @@ const AppRouter = () => {
     });
 
     return () => unsubscribe();
- }, []);
+  }, []);
 
   return (
     <Router>
